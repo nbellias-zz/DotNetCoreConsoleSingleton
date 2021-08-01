@@ -36,6 +36,8 @@ namespace DotNetCoreConsoleSingleton
             var myResource2 = MySingletonResourceNonThreadSafe.Instance;
             myResource2.ExecuteResourceProcess("Sensor 2 data");
 
+            Console.WriteLine(myResource1 == myResource2);
+
             Console.WriteLine("Case #2: singleton thread safe.");
 
             var myResource3 = MySingletonResourceThreadSafe.Instance;
@@ -43,6 +45,8 @@ namespace DotNetCoreConsoleSingleton
 
             var myResource4 = MySingletonResourceThreadSafe.Instance;
             myResource4.ExecuteResourceProcess("Sensor 4 data");
+
+            Console.WriteLine(myResource3 == myResource4);
 
             Console.WriteLine("Case #3: singleton thread safe with double-check locking.");
 
@@ -52,6 +56,8 @@ namespace DotNetCoreConsoleSingleton
             var myResource6 = MySingletonResourceThreadSafeWithDoubleCheckLocking.Instance;
             myResource6.ExecuteResourceProcess("Sensor 6 data");
 
+            Console.WriteLine(myResource5 == myResource6);
+
             Console.WriteLine("Case #4: singleton without locking nor lazy instantiation.");
 
             var myResource7 = MySingletonResourceWithoutLockNorLazyInstantiation.Instance;
@@ -60,6 +66,8 @@ namespace DotNetCoreConsoleSingleton
             var myResource8 = MySingletonResourceWithoutLockNorLazyInstantiation.Instance;
             myResource8.ExecuteResourceProcess("Sensor 8 data");
 
+            Console.WriteLine(myResource7 == myResource8);
+
             Console.WriteLine("Case #5: singleton without lazy type.");
 
             var myResource9 = MySingletonResourceUsingLazyType.Instance;
@@ -67,6 +75,8 @@ namespace DotNetCoreConsoleSingleton
 
             var myResource10 = MySingletonResourceUsingLazyType.Instance;
             myResource10.ExecuteResourceProcess("Sensor 10 data");
+
+            Console.WriteLine(myResource9 == myResource10);
 
         }
     }
